@@ -1,0 +1,79 @@
+<section  class="bgshow">
+    <h2 style="align-items: center;">Show-Your-Talent</h2><br></section>
+<div class="body">
+   
+<div class="container">
+    
+    <form action="#" [formGroup]="registerform" (ngSubmit)="submitdata()">
+        <h3>participate here</h3>
+        <div class="inputBox">
+            <label for="user">Username:</label>
+            <div class="icon">
+                <i class="fa-solid fa-user"></i>
+            </div>
+            <input type="text" formControlName="username" id="user" required="">
+            <div *ngIf="username.invalid && username.touched || username.dirty">
+                <span style="color: rgb(188, 124, 151);"   *ngIf="username.errors?.required">Username is required</span>
+                <span style="color: rgb(188, 124, 151);"   *ngIf="username.errors?.pattern">Enter only charachters</span>
+            </div>
+        </div>
+
+        
+        <div class="inputBox">
+            <label for="phone">Mobile no:</label>
+            <div class="icon">
+                <i class="fa-solid fa-phone"></i>
+            </div>
+            <input type="text" formControlName="phone" id="phone">
+            <div *ngIf="phone.invalid && phone.touched || phone.dirty">
+                <span style="color: rgb(188, 124, 151);"   *ngIf="phone.errors?.required">phone no. is required</span>
+                <span style="color: rgb(188, 124, 151);"   *ngIf="phone.errors?.pattern">Enter only numbers</span>
+            </div>
+
+        </div>
+        
+        <div class="inputBox">
+            <label for="file">upload photography:</label>
+            <div class="icon">
+                <i class="fa-solid fa-camera-retro"></i>
+            </div>
+            <input type="file" id="file">
+
+        </div>
+        <div class="inputBox">
+            <label for="email">Email:</label>
+            <div class="icon">
+                <i class="fa-solid fa-envelope"></i>
+            </div>
+            <input type="email" formControlName="email" id="email">
+            <div *ngIf="email.invalid && email.touched || email.dirty">
+                <span style="color: rgb(188, 124, 151);"   *ngIf="phone.errors?.required">email id  is required</span>
+                <span style="color: rgb(188, 124, 151);"   *ngIf="email.errors?.email">Enter valid email address</span>
+            </div>
+
+        </div>
+
+        <div class="inputBox">
+            <label for="password">Password:</label>
+            <div class="icon">
+                <i class="fa-solid fa-lock"></i>
+            </div>
+            <input type="password" formControlName="password" id="password">
+            <div *ngIf="password.invalid && password.touched || password.dirty">
+                <span style="color: rgb(188, 124, 151);"   *ngIf="submitted && password.errors?.required">password  is required</span>
+                <span style="color: rgb(188, 124, 151);"   *ngIf="password.errors?.email">Enter valid password</span>
+            </div>
+            
+        </div>
+        <label>
+            <input type="checkbox" name="" id="">
+            Remember me
+        </label>
+        <br>
+       <button class="." [disabled]="registerform.invalid">Submit</button>
+       <a routerLink="/login" style="color:#d8778e;">already resistered? click to login !</a>
+
+
+    </form>
+</div>
+</div>

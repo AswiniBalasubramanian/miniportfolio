@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Bebas+Neue&family=Fauna+One&family=Josefin+Sans&family=Montserrat:wght@300&family=Open+Sans&family=Oswald:wght@500&family=Playfair+Display:ital,wght@1,600&family=Poppins:ital,wght@0,300;0,500;1,700&family=Quattrocento&family=Raleway:wght@600&family=Roboto:wght@700&display=swap');
+
+.home img{
+    width: 100%;
+    display: flex;
+    height: 100vh;
+    object-position: center;
+    object-fit: cover;
+    
+
+}
+.home {
+    color:#fff;
+    font-family:'Raleway', sans-serif; ;
+
+}
+.home .text-1 {
+    position:absolute;
+    top: 39%;
+    left:19%;
+    transform: translate(-50%,-50%);
+    font-size: 50px;
+    
+    
+}
+@keyframes blinkText{
+    0%{
+        opacity:0.1;
+    }
+    10%{
+        opacity: 1;
+        text-shadow: 1px 0px 30px #F21170;
+    }
+
+}
+.home .text-2 {
+    position:absolute;
+    top: 50%;
+    left:22%;
+    transform: translate(-50%,-50%);
+    font-size: 60px;
+    animation:blinkText 2s infinite ;
+}
+
+.home .static-txt{
+    position:absolute;
+    top: 70%;
+    left:19%;
+    transform: translate(-50%,-50%);
+    font-size: 50px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+.home .dynamic-txts{
+    position:absolute;
+    top: 85%;
+    left:20%;
+    transform: translate(-50%,-50%);
+    font-size: 40px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.wrapper{
+    display: inline-flex;
+    
+}
+.wrapper .static-txt{
+    color: #fff;
+    font-weight: 400;
+    
+    left:19%;
+}
+.wrapper .dynamic-txts{
+    margin-left: 15px;
+}
+.wrapper .dynamic-txts{
+    margin-left: 15px;
+    height: 90px;
+    line-height: 45px;
+    
+    overflow: hidden;
+}
+.dynamic-txts li{
+    color: #F21170;
+    list-style: none;
+    font-weight: 500;
+    animation:slide 10s steps(1) infinite;
+    position: relative;
+    top:1;
+}
+@keyframes slide {
+    100%{
+        top: -360px;
+    }
+}
+    
+
+.dynamic-txts li span{
+    position: relative;
+}
+.dynamic-txts li span::after{
+    content: "";
+    position: absolute;
+    left:0    ;
+    height:100%;
+    width:150%;
+    border-left: 2px solid #F21170;
+    background: #232323;
+    animation:typing 2s steps(12) infinite;
+    
+}
+@keyframes typing {
+    100%{
+        left:100%;
+        margin: 0 -35px 0 35px;
+    }
+}
+
+.homebutton .b1{
+    
+    position:absolute;
+    top: 95%;
+    left:15%;
+    transform: translate(-50%,-50%);
+    margin: 0 35px;
+    margin-left: 4px;
+    font-family: 'Josefin Sans', sans-serif;
+    border-radius: 50px;
+    height: 40px;
+    width: 180px;
+    border:none;
+    outline: none;
+    background-color: #F21170;
+    
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    
+}
+.homebutton .b2{
+    position:absolute;
+    height: 40px;
+    width: 180px;
+    margin-right: 10px;
+    top: 95%;
+    left:30%;
+    transform: translate(-50%,-50%);
+    margin: 0 35px;
+    font-family: 'Josefin Sans', sans-serif;
+    border-radius: 50px;
+    border:none;
+    outline: none;
+    background-color: #F21170;
+    
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+ .homebutton :first-child:hover {
+     background: linear-gradient(90deg, #F21170,
+     #db9aa9,
+     #F56D91,
+     #F473B9,
+     #F7F5F2,
+     #F21170);
+     background-size: 300%;
+ }
+ .homebutton :last-child:hover{
+    background: linear-gradient(90deg, #F21170,
+    #db9aa9,
+    #F56D91,
+    #F473B9,
+    #F7F5F2,
+    #F21170);
+    background-size: 300%;
+}
+.homebutton :first-child:before,
+.homebutton :last-child:before{
+    content: '';
+    position: absolute;
+    background: inherit;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    border-radius: 50px;
+    filter: blur(20px);
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+.homebutton :first-child:hover:before,
+.homebutton :last-child:hover:before{
+
+    opacity: 1;
+    z-index: -1 ;
+}
+.homebutton :hover {
+    z-index: 1;
+    animation: glow 8s linear infinite;
+}
+@keyframes glow{
+    0%{
+        background-position: 0%;
+    }
+    100%{
+        background-position: 400%;
+    }
+}
+
